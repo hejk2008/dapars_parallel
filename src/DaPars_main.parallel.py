@@ -579,8 +579,8 @@ def Load_Target_Wig_files(All_Wig_files, UTR_Annotation_file):
         num_line = 0
         cur_sample_total_depth = 0
         for line in open(curr_wig_file,'r'):
-            if '#' not in line:
-            #if '#' not in line and line[0:3] == 'chr':
+            #if '#' not in line:
+            if '#' not in line and line[0:3] == 'chr':
                 fields = line.strip('\n').split('\t')
                 chrom_name = fields[0]
                 region_start = int(float(fields[1]))
