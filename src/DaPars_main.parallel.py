@@ -224,7 +224,7 @@ def De_Novo_3UTR_Identification_Loading_Target_Wig_for_TCGA_Multiple_Samples_Mai
         ))
     pool.close()
     pool.join()
-    Output_all_prediction_file = os.path.join(output_directory, Output_result_file + '_result_temp.txt')
+    Output_all_prediction_file = os.path.join(output_directory, Output_result_file + '_result_temp.tsv')
     with open(Output_all_prediction_file, 'w') as outfile:
         # 写入标题
         first_line = ['Gene','fit_value','Predicted_Proximal_APA','Loci'] 
