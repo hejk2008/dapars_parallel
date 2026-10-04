@@ -224,7 +224,7 @@ def De_Novo_3UTR_Identification_Loading_Target_Wig_for_TCGA_Multiple_Samples_Mai
         ))
     pool.close()
     pool.join()
-    Output_all_prediction_file = os.path.join(output_directory, Output_result_file + '_result_temp.tsv')
+    Output_all_prediction_file = os.path.join(output_directory, Output_result_file + '_result_temp.txt')
     with open(Output_all_prediction_file, 'w') as outfile:
         # 写入标题
         first_line = ['Gene','fit_value','Predicted_Proximal_APA','Loci'] 
@@ -305,7 +305,7 @@ def De_Novo_3UTR_Identification_Loading_Target_Wig_for_TCGA_Multiple_Samples_Mai
     Output_result.close() """
     print("[%s] Filtering the result ..." % time_now(), file=sys.stderr)
     
-    Output_Motif_filtered_result_file = output_directory+Output_result_file+'_All_Prediction_Results.txt'
+    Output_Motif_filtered_result_file = output_directory+Output_result_file+'_All_Prediction_Results.tsv'
     #UTR_APA_Result_filtering(Output_all_prediction_file,Genome_seq_fasta,Output_Motif_filtered_result_file)
     
     DaPars_Filtering(Output_all_prediction_file, num_samples,num_group_1 ,Output_Motif_filtered_result_file)
